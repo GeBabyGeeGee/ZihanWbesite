@@ -324,7 +324,8 @@
 
         .image-full img {
             width: 100%;
-            border-radius: 0;
+            border-radius: 0; /* Image itself should not have radius if container handles it or it's truly full-bleed */
+            display: block; /* Remove any potential space below image */
         }
 
         .image-full .image-caption {
@@ -468,17 +469,18 @@
             overflow: hidden;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
             position: relative;
-            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            padding-top: 56.25%; /* 16:9 Aspect Ratio for responsive iframe */
+            background-color: #000; /* Optional: background for when video is loading */
         }
 
-        .video-container video {
+        .video-container video,
+        .video-container iframe { /* Apply styles to both video and iframe */
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            border: none;
-            object-fit: cover;
+            border: none; /* Remove border from iframe */
         }
 
         .video-description {
@@ -1365,7 +1367,7 @@
                     
                     <div class="image-left">
                         <div class="content-image clickable-image">
-                            <img src="https://github.com/GeBabyGeeGee/ZihanWbesite/blob/main/chenbei.png" alt="Media Expert discussing AI" data-viewer="Expert Analysis on AI in Journalism" onerror="this.onerror=null;this.src='https://placehold.co/800x500/cccccc/333333?text=Expert+Image';">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Media Expert discussing AI" data-viewer="Expert Analysis on AI in Journalism" onerror="this.onerror=null;this.src='https://placehold.co/800x500/cccccc/333333?text=Expert+Image';">
                             <div class="image-caption">
                                 <strong>Expert Analysis:</strong> Academics and industry leaders provide crucial perspectives on AI's role in journalism's future.
                             </div>
@@ -1443,7 +1445,7 @@
                     <p>Professor Chen Bei highlighted the difficulty of maintaining journalistic values: “Journalism involves cold judgment, ethical reasoning, nuanced interpretation, and source relationship building.” These qualities remain difficult for AI systems to replicate convincingly.</p>
                     
                     <div class="image-full">
-                        <img src="https://images.unsplash.com/photo-1589254065878-42c9da997008?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Abstract image representing ethical AI in journalism" data-viewer="Ethical Challenges in AI Journalism" onerror="this.onerror=null;this.src='https://placehold.co/1600x900/cccccc/333333?text=Ethical+Challenges+Image';">
+                        <img src="https://images.unsplash.com/photo-1589254065878-42c9da997008?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="AI and human hand representing ethical AI challenges" data-viewer="Ethical Challenges in AI Journalism" onerror="this.onerror=null;this.src='https://placehold.co/1200x800/cccccc/333333?text=Ethical+Challenges+Image';">
                         <div class="image-caption">
                             <strong>Ethical Challenges:</strong> UK news organizations must navigate concerns about transparency, accuracy, and maintaining public trust when implementing AI systems.
                         </div>
@@ -1532,10 +1534,7 @@
             <h2>Video: Public Perspectives on AI in Journalism</h2>
             <p>Watch our street interviews with Londoners as they reflect on the role of AI in news media and whether they can distinguish between AI and human-written content.</p>
             <div class="video-container">
-                <video controls poster="https://placehold.co/1000x563/0071e3/ffffff?text=Video+Preview" preload="metadata">
-                    <source src="https://www.youtube.com/watch?v=YNq9lfC3_dc" type="video/mp4">
-                    Your browser does not support the video tag. Please <a href="https://youtu.be/YNq9lfC3_dc">download the video</a> to watch.
-                </video>
+                <iframe src="https://www.youtube.com/embed/YNq9lfC3_dc?si=MzHeHZ5rJzIvCggK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
             <div class="video-description">
                 In this video, we conducted street interviews across London, asking participants about their trust in AI-generated news and their ability to distinguish between AI and human-written content. The responses reveal interesting generational differences and raise important questions about transparency in news media.
@@ -1648,13 +1647,13 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 AIJournal. All rights reserved. Exploring the future of journalism in a digital world.</p>
+                <p>© 2025 AIJournal. All rights reserved. Exploring the future of journalism in a digital world.</p>
             </div>
         </div>
     </footer>
 
     <div class="image-viewer" id="imageViewer">
-        <button class="viewer-close" id="viewerClose" aria-label="Close image viewer">&times;</button>
+        <button class="viewer-close" id="viewerClose" aria-label="Close image viewer">×</button>
         <div class="viewer-content">
             <img src="" alt="Full-size view of image" class="viewer-image" id="viewerImage">
             <div class="viewer-caption" id="viewerCaption"></div>
@@ -1846,8 +1845,3 @@
     </script>
 </body>
 </html>
-```
-
-I've incorporated your new text into the main article body, updated the video and audio `src` attributes (using the raw GitHub link for the audio), and made sure the overall structure and JavaScript functionalities should remain operational. I also adjusted the "Expert Perspectives" section by removing the three-column layout as it wasn't in your new text for that part, and refined how quotes are displayed in the "Public Perception" section.
-
-You can now preview this updated HTML. Let me know if you have any more adjustmen
