@@ -109,9 +109,9 @@
 
         nav {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-between; /* Keeps logo left, links/button right */
             align-items: center;
-            padding: 1.25rem 0;
+            padding: 1rem 0; /* Adjusted padding */
         }
 
         .logo {
@@ -127,16 +127,21 @@
         .nav-links {
             display: flex;
             list-style: none;
+            margin: 0; /* Reset margin */
+            padding: 0; /* Reset padding */
+            align-items: center; /* Vertically align items */
         }
 
         .nav-links li {
-            margin-left: 2rem;
+            margin: 0 1.5rem; /* Adjusted margin between links */
         }
 
         .nav-links a {
             color: var(--text-color);
             font-weight: 500;
             position: relative;
+            font-size: 1.05rem; /* Increased font size */
+            padding: 0.5rem 0; /* Add padding for easier clicking */
         }
 
         .nav-links a:hover {
@@ -246,6 +251,7 @@
             margin-bottom: 2rem;
             font-size: 0.9rem;
             color: var(--light-text);
+            flex-wrap: wrap; /* Allow wrapping on small screens */
         }
 
         .author-avatar {
@@ -260,13 +266,20 @@
             justify-content: center;
             font-weight: 600;
             font-size: 1rem;
+            flex-shrink: 0; /* Prevent avatar from shrinking */
         }
         .author-name {
-            margin-right: 10px;
+            margin-right: 5px; /* Reduced margin */
+            white-space: nowrap; /* Prevent breaking within the name/title */
         }
+         .author-title { /* Added class for styling the title */
+            margin-right: 10px;
+            white-space: nowrap;
+         }
 
         .article-date {
             margin-left: auto;
+            white-space: nowrap;
         }
 
         /* Content image styles */
@@ -347,10 +360,7 @@
             border-radius: 12px;
             padding: 2rem;
             margin: 3rem 0;
-            display: grid;
-            grid-template-columns: 1fr 1fr; /* Default for larger screens */
-            gap: 2rem;
-            align-items: center;
+            /* Removed grid layout, now single column */
         }
 
         .feature-content h3 {
@@ -358,21 +368,8 @@
             color: var(--primary-color);
         }
 
-        .feature-image {
-            overflow: hidden;
-            border-radius: 8px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
+        /* Removed .feature-image styles as it's deleted */
 
-        .feature-image img {
-            width: 100%;
-            display: block;
-            transition: transform 0.5s ease;
-        }
-
-        .feature-card:hover .feature-image img {
-            transform: scale(1.05);
-        }
 
         /* Data visualization section */
         .data-viz {
@@ -1089,6 +1086,9 @@
             .toc-container {
                 display: none; /* Hide TOC on smaller tablets/mobile */
             }
+             .nav-links {
+                display: none; /* Hide nav links on tablet and below */
+             }
         }
 
         @media (max-width: 768px) {
@@ -1097,7 +1097,7 @@
             .hero { padding: 6rem 0 3rem; }
             .hero h1 { font-size: 2.5rem; }
             
-            .nav-links { display: none; } /* Basic mobile menu handling, consider a burger menu for real apps */
+            .nav-links { display: none; } /* Already hidden from tablet */
             
             .image-left, .image-right, .feature-card, .article-grid, .three-column, .data-items {
                 grid-template-columns: 1fr; /* Stack grid items */
@@ -1162,6 +1162,8 @@
             }
             .hero-overlay h2 { font-size: 1.5rem; }
             .hero-overlay p { font-size: 0.9rem; }
+            .nav-links li { margin: 0 1rem; } /* Reduce spacing if nav links were visible */
+            .nav-links a { font-size: 1rem; }
         }
 
         /* Dark Mode Styles */
@@ -1347,7 +1349,7 @@
                 <div class="article-content">
                     <div class="article-meta">
                         <div class="author-avatar">ZH</div>
-                        <span class="author-name">Zihan | AI & Media Researcher</span>
+                        <span class="author-name">Zihan |</span> <span class="author-title">Journalism & Media student who interest in AI</span>
                         <span class="article-date">May, 2025</span>
                     </div>
 
@@ -1511,10 +1513,7 @@
                             <p>The Financial Times has implemented AI tools that scan thousands of corporate filings and financial reports daily, identifying unusual patterns and potential story leads. These tools have enabled their journalists to uncover stories that might otherwise have been missed.</p>
                             <p>Crucially, the FT maintains strict human oversight, with experienced financial journalists evaluating AI-flagged anomalies, conducting further investigation, and making final editorial decisions. This partnership approach has enhanced reporting depth while maintaining the publication's reputation for accuracy.</p>
                         </div>
-                        <div class="feature-image">
-                            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Financial Times Building" onerror="this.onerror=null;this.src='https://placehold.co/800x500/cccccc/333333?text=FT+Building+Image';">
                         </div>
-                    </div>
                     
                     <p>The BBC’s approach has similarly emphasized augmentation over replacement. Their AI experimentation lab focuses on content discovery, translation, and accessibility features while maintaining human editorial judgment for all published content.</p>
                     <p>Smaller UK news organizations are finding that AI can help them compete with larger outlets. Community-owned local news cooperatives use AI tools for transcription and data analysis, allowing their small teams to tackle investigative stories that would previously have been beyond their resources.</p>
@@ -1523,7 +1522,7 @@
                     
                     <div class="image-left">
                         <div class="content-image clickable-image">
-                             <img src="https://raw.githubusercontent.com/GeBabyGeeGee/ZihanWbesite/main/FutureNews.png" alt="Futuristic news interface with human collaboration" data-viewer="Future of Journalism with AI" onerror="this.onerror=null;this.src='https://placehold.co/800x500/cccccc/333333?text=Future+Newsroom+Image';">
+                            <img src="https://raw.githubusercontent.com/GeBabyGeeGee/ZihanWbesite/main/FutureNews.png" alt="Futuristic news interface with human collaboration" data-viewer="Future of Journalism with AI" onerror="this.onerror=null;this.src='https://placehold.co/800x500/cccccc/333333?text=Future+Newsroom+Image';">
                             <div class="image-caption">
                                 <strong>Future of Journalism:</strong> Industry projections suggest a hybrid model where AI handles routine content while humans focus on investigation and interpretation.
                             </div>
