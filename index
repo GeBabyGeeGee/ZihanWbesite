@@ -1,0 +1,1853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Future of AI in UK Journalism | Revolution or Evolution?</title>
+    <style>
+        /* Basic style settings */
+        :root {
+            --primary-color: #0071e3;
+            --secondary-color: #86b9ff;
+            --dark-color: #1d1d1f;
+            --light-color: #f5f5f7;
+            --text-color: #333;
+            --light-text: #86868b;
+            --font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --font-secondary: SF Pro Display, SF Pro Icons, Helvetica Neue, Arial, sans-serif;
+            --transition-speed: 0.3s;
+            --quote-color: #f2f2f7;
+            --quote-border: #0071e3;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            color: var(--text-color);
+            background-color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-secondary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            letter-spacing: -0.5px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-top: 2.5rem;
+            color: var(--dark-color);
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            color: var(--dark-color);
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.125rem;
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: all var(--transition-speed) ease;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        ul, ol {
+            margin-bottom: 1.5rem;
+            padding-left: 2rem; /* Indent lists */
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation bar styles */
+        header {
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.25rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            font-weight: 500;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: width var(--transition-speed) ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero section styles */
+        .hero {
+            padding: 8rem 0 4rem;
+            background: linear-gradient(to bottom, var(--light-color) 0%, white 100%);
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            color: var(--dark-color);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--light-text);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-img {
+            max-width: 1000px;
+            margin: 0 auto;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .hero-img img {
+            width: 100%;
+            transform: scale(1.01);
+            transition: transform 0.7s ease;
+        }
+
+        .hero-img:hover img {
+            transform: scale(1.03);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+            padding: 80px 40px 30px;
+            color: white;
+            text-align: left;
+        }
+
+        .hero-overlay h2 {
+            font-size: 1.8rem;
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .hero-overlay p {
+            font-size: 1rem;
+            margin-bottom: 0;
+            max-width: 600px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Article styles */
+        .article {
+            padding: 4rem 0;
+        }
+
+        .article-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            color: var(--light-text);
+        }
+
+        .author-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+            background-color: var(--primary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        .author-name {
+            margin-right: 10px;
+        }
+
+        .article-date {
+            margin-left: auto;
+        }
+
+        /* Content image styles */
+        .content-image {
+            margin: 2.5rem 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .content-image img {
+            width: 100%;
+            display: block;
+            border-radius: 0; /* Remove individual border radius if container handles it */
+        }
+
+        .image-caption {
+            background-color: #f8f8f8;
+            padding: 1rem;
+            font-size: 0.9rem;
+            color: var(--light-text);
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+        }
+
+        /* Image left layout */
+        .image-left {
+            display: grid;
+            grid-template-columns: 1fr 2fr; /* Default for larger screens */
+            gap: 2rem;
+            align-items: center;
+            margin: 3rem 0;
+        }
+
+        .image-left .content-image {
+            margin: 0;
+        }
+
+        /* Image right layout */
+        .image-right {
+            display: grid;
+            grid-template-columns: 2fr 1fr; /* Default for larger screens */
+            gap: 2rem;
+            align-items: center;
+            margin: 3rem 0;
+        }
+
+        .image-right .content-image {
+            margin: 0;
+        }
+
+        /* Full-width image layout */
+        .image-full {
+            margin: 3rem -4rem; /* Adjust based on container padding */
+            position: relative;
+        }
+
+        .image-full img {
+            width: 100%;
+            border-radius: 0;
+        }
+
+        .image-full .image-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+            color: white;
+            padding: 60px 2rem 1.5rem;
+            border-radius: 0;
+        }
+
+        /* Feature card */
+        .feature-card {
+            background-color: var(--light-color);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 3rem 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Default for larger screens */
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .feature-content h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+
+        .feature-image {
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-image img {
+            width: 100%;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .feature-card:hover .feature-image img {
+            transform: scale(1.05);
+        }
+
+        /* Data visualization section */
+        .data-viz {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            padding: 2rem;
+            margin: 3rem 0;
+        }
+
+        .data-viz h3 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .data-items {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Default for larger screens */
+            gap: 1.5rem;
+        }
+
+        .data-item {
+            text-align: center;
+            padding: 1.5rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            background-color: var(--light-color);
+        }
+
+        .data-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .data-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .data-label {
+            font-size: 1rem;
+            color: var(--light-text);
+        }
+
+        /* Blockquote style */
+        blockquote {
+            border-left: 4px solid var(--quote-border);
+            padding: 1.5rem 2rem;
+            margin: 2rem 0;
+            font-style: italic;
+            color: var(--dark-color);
+            background-color: var(--quote-color);
+            border-radius: 0 8px 8px 0;
+            position: relative;
+        }
+
+        blockquote::before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 3rem;
+            color: rgba(0, 113, 227, 0.1);
+            font-family: Georgia, serif;
+        }
+
+        blockquote p {
+            font-size: 1.25rem;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        .quote-author {
+            display: block;
+            font-style: normal;
+            font-weight: 600;
+            margin-top: 1rem;
+            font-size: 1rem;
+            color: var(--text-color);
+            text-align: right;
+        }
+
+        /* Video section */
+        .video-section {
+            padding: 5rem 0;
+            text-align: center;
+            background-color: var(--light-color);
+        }
+
+        .video-container {
+            max-width: 1000px;
+            margin: 3rem auto 0;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            position: relative;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+        }
+
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            object-fit: cover;
+        }
+
+        .video-description {
+            max-width: 800px;
+            margin: 2rem auto 0;
+            font-size: 0.95rem;
+            color: var(--light-text);
+        }
+
+        /* Audio player */
+        .audio-section {
+            padding: 4rem 0;
+            background-color: white;
+        }
+
+        .audio-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--light-color);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .audio-title {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .audio-player {
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+
+        .audio-description {
+            font-size: 0.95rem;
+            color: var(--light-text);
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+
+        .audio-portrait {
+            display: grid;
+            grid-template-columns: 120px 1fr; /* Default for larger screens */
+            gap: 1.5rem;
+            align-items: center;
+            margin-top: 1.5rem;
+        }
+
+        .audio-portrait img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .audio-person-details h4 {
+            margin-bottom: 0.5rem;
+            color: var(--dark-color);
+        }
+
+        .audio-person-details p {
+            font-size: 0.95rem;
+            color: var(--light-text);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Person quote card */
+        .quote-card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .quote-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .quote-card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .person-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--light-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .person-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .person-description {
+            font-size: 0.9rem;
+            color: var(--light-text);
+        }
+
+        .quote-card-content {
+            font-style: italic;
+            color: var(--text-color);
+            border-left: 3px solid var(--primary-color);
+            padding-left: 1rem;
+            margin: 1rem 0;
+        }
+         .quote-card-content p { /* Ensure p inside quote card content has no bottom margin if it's the last element */
+            margin-bottom: 0;
+        }
+
+
+        /* Related articles section */
+        .related-articles {
+            padding: 4rem 0;
+            background-color: var(--light-color);
+        }
+
+        .related-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .article-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Default for larger screens */
+            gap: 2rem;
+        }
+
+        .article-card {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            background-color: white;
+        }
+
+        .article-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .article-card-image {
+            overflow: hidden;
+            height: 200px;
+        }
+
+        .article-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .article-card:hover .article-card-image img {
+            transform: scale(1.05);
+        }
+
+        .article-card-content {
+            padding: 1.5rem;
+        }
+
+        .article-card-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark-color); /* Ensure title color is consistent */
+        }
+
+        .article-card-excerpt {
+            font-size: 0.9rem;
+            color: var(--light-text);
+            margin-bottom: 1rem;
+        }
+
+        .article-card-link {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .article-card-link::after {
+            content: '→';
+            margin-left: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .article-card-link:hover::after {
+            transform: translateX(5px);
+        }
+
+        /* Three-column layout */
+        .three-column {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Default for larger screens */
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .column-item {
+            background-color: var(--light-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .column-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .column-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .column-item p {
+            font-size: 0.95rem;
+            color: var(--text-color);
+            margin-bottom: 0;
+        }
+
+        /* Main data chart */
+        .chart-section {
+            margin: 4rem 0;
+            text-align: center;
+        }
+
+        .chart-container {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .chart-title {
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .chart {
+            position: relative;
+            height: 360px; /* Increased height to accommodate labels */
+            margin: 0 auto;
+        }
+
+        .chart-bars {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-end;
+            height: 300px; /* Main height for bars */
+            border-bottom: 1px solid #ccc; /* X-axis line */
+            padding-bottom: 30px; /* Space for labels */
+            position: relative;
+        }
+
+        .chart-bar {
+            width: 60px; /* Adjust as needed */
+            border-radius: 8px 8px 0 0;
+            background: linear-gradient(to top, var(--primary-color), var(--secondary-color));
+            position: relative;
+            transition: height 1s ease;
+            margin: 0 10px; /* Spacing between bars */
+        }
+
+        .chart-bar-label {
+            position: absolute;
+            bottom: -30px; /* Position below the bar */
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--light-text);
+        }
+
+        .chart-bar-value {
+            position: absolute;
+            top: -25px; /* Position above the bar */
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-weight: 600;
+            color: var(--primary-color);
+            font-size: 0.9rem;
+        }
+
+        /* Call to Action section */
+        .cta-section {
+            background: linear-gradient(120deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .cta-section p {
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: white;
+            color: var(--primary-color);
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all var(--transition-speed) ease;
+            border: 2px solid transparent;
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: white;
+            border-color: white;
+            text-decoration: none;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* Default for larger screens */
+            gap: 40px;
+            margin-bottom: 3rem;
+        }
+        .footer-column p { /* Style for paragraph in footer */
+            font-size: 0.95rem;
+            color: #ddd;
+            line-height: 1.5;
+        }
+
+        .footer-column h4 {
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0; /* Remove default padding */
+        }
+
+        .footer-links li {
+            margin-bottom: 0.7rem;
+        }
+
+        .footer-links a {
+            color: #ddd;
+            transition: color var(--transition-speed) ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #999;
+        }
+
+        /* Image viewer */
+        .image-viewer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .image-viewer.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .viewer-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+
+        .viewer-image {
+            max-width: 100%;
+            max-height: 90vh; /* Ensure it fits viewport height */
+            border-radius: 8px;
+        }
+
+        .viewer-caption {
+            position: absolute;
+            bottom: -40px; /* Adjust as needed */
+            left: 0;
+            right: 0;
+            text-align: center;
+            color: white;
+            font-size: 1rem;
+        }
+
+        .viewer-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            z-index: 2001;
+        }
+
+        /* Highlight text box */
+        .highlight-box {
+            background-color: rgba(0, 113, 227, 0.05);
+            border-left: 4px solid var(--primary-color);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .highlight-box h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.75rem;
+            margin-top: 0; /* Reset margin for h4 inside highlight box */
+        }
+         .highlight-box ol {
+            padding-left: 1.5rem; /* Adjust list padding inside highlight box */
+            margin-bottom: 0; /* Remove bottom margin if it's the last element */
+        }
+        .highlight-box li {
+            font-size: 1.05rem; /* Slightly larger text for readability */
+            line-height: 1.7;
+        }
+
+
+        /* Clickable image */
+        .clickable-image {
+            cursor: zoom-in;
+            position: relative;
+        }
+
+        .clickable-image::after {
+            content: '+';
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            width: 30px;
+            height: 30px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .clickable-image:hover::after {
+            opacity: 1;
+        }
+
+        /* Animation effects */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease forwards;
+            opacity: 0; /* Start hidden */
+        }
+
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+
+        /* Table of Contents / Sidebar */
+        .toc-container {
+            position: sticky;
+            top: 100px; /* Adjust based on header height */
+            padding: 1.5rem;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2rem;
+            max-height: calc(100vh - 150px); /* Adjust to prevent overlap with footer */
+            overflow-y: auto;
+        }
+
+        .toc-title {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #f0f0f0;
+            color: var(--dark-color);
+        }
+
+        .toc-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .toc-item {
+            margin-bottom: 0.5rem;
+        }
+
+        .toc-link {
+            display: block;
+            padding: 0.5rem 0;
+            color: var(--text-color);
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+            border-left: 2px solid transparent;
+            padding-left: 10px;
+        }
+
+        .toc-link:hover, .toc-link.active {
+            color: var(--primary-color);
+            border-left: 2px solid var(--primary-color);
+            padding-left: 15px; /* Indent active/hovered link */
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* Two-column layout for article and sidebar */
+        .two-column-layout {
+            display: grid;
+            grid-template-columns: 3fr 1fr; /* Main content wider than sidebar */
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+        .sidebar { /* Container for TOC */
+            width: 100%;
+        }
+
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .two-column-layout {
+                grid-template-columns: 2fr 1fr; /* Adjust column ratio */
+            }
+            .image-full {
+                margin: 3rem -20px; /* Adjust for container padding */
+            }
+        }
+        
+        @media (max-width: 1024px) {
+            .image-full {
+                margin: 3rem -2rem;
+            }
+            .article-grid, .three-column, .data-items {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .hero h1 {
+                font-size: 3rem;
+            }
+            .two-column-layout {
+                grid-template-columns: 1fr; /* Stack columns */
+            }
+            .toc-container {
+                display: none; /* Hide TOC on smaller tablets/mobile */
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.75rem; }
+            .hero { padding: 6rem 0 3rem; }
+            .hero h1 { font-size: 2.5rem; }
+            
+            .nav-links { display: none; } /* Basic mobile menu handling, consider a burger menu for real apps */
+            
+            .image-left, .image-right, .feature-card, .article-grid, .three-column, .data-items {
+                grid-template-columns: 1fr; /* Stack grid items */
+                gap: 1.5rem; /* Adjust gap */
+            }
+            .feature-card { padding: 1.5rem; }
+            .image-full { margin: 2rem -1rem; }
+            
+            .audio-portrait {
+                grid-template-columns: 80px 1fr; /* Adjust for smaller avatar */
+                gap: 1rem;
+            }
+            .audio-portrait img {
+                width: 80px;
+                height: 80px;
+            }
+            .chart-bars {
+                flex-direction: column; /* Stack bars vertically if needed, or adjust bar width */
+                align-items: center;
+                height: auto; /* Adjust height */
+            }
+            .chart-bar {
+                width: 80%; /* Make bars wider if stacked */
+                margin-bottom: 35px; /* Space for label if stacked */
+                height: 50px; /* Example fixed height, dynamic is better */
+            }
+             .chart-bar-label { bottom: -25px; }
+             .chart-bar-value { top: 5px; color: white; background-color: rgba(0,0,0,0.3); padding: 2px 4px; border-radius: 3px;}
+
+
+        }
+
+        @media (max-width: 480px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .chart-bar {
+                width: 50px; /* Further reduce bar width */
+            }
+            .container {
+                padding: 0 15px; /* Reduce container padding */
+            }
+            .image-full {
+                 margin: 2rem 0; /* Remove negative margins on smallest screens */
+            }
+            .hero-overlay {
+                padding: 40px 20px 20px;
+            }
+            .hero-overlay h2 { font-size: 1.5rem; }
+            .hero-overlay p { font-size: 0.9rem; }
+        }
+
+        /* Dark Mode Styles */
+        .dark-mode-toggle {
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-size: 1.2rem;
+            cursor: pointer;
+            margin-left: 1rem; /* Ensure it has some space */
+        }
+
+        body.dark-mode {
+            background-color: #121212;
+            color: #eee;
+        }
+        body.dark-mode header {
+            background-color: rgba(18, 18, 18, 0.8); /* Darker translucent header */
+            box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08);
+        }
+        body.dark-mode .logo, 
+        body.dark-mode .nav-links a,
+        body.dark-mode h1,
+        body.dark-mode h2,
+        body.dark-mode h3,
+        body.dark-mode h4, /* Added h4 for consistency */
+        body.dark-mode .toc-title {
+            color: #fff;
+        }
+        body.dark-mode .hero {
+            background: linear-gradient(to bottom, #1a1a1a 0%, #121212 100%);
+        }
+        body.dark-mode .hero p, 
+        body.dark-mode .article-meta,
+        body.dark-mode .person-description,
+        body.dark-mode .article-card-excerpt,
+        body.dark-mode .video-description,
+        body.dark-mode .audio-description,
+        body.dark-mode .data-label,
+        body.dark-mode .chart-bar-label {
+            color: #bbb; /* Lighter grey for secondary text */
+        }
+        body.dark-mode p { /* General paragraph color in dark mode */
+             color: #ddd;
+        }
+        body.dark-mode a {
+            color: var(--secondary-color); /* Brighter blue for links */
+        }
+        body.dark-mode a:hover {
+            color: #fff;
+        }
+        body.dark-mode .image-caption {
+            background-color: #2a2a2a;
+            color: #ccc;
+        }
+        body.dark-mode .feature-card,
+        body.dark-mode .data-item,
+        body.dark-mode .column-item,
+        body.dark-mode .toc-container,
+        body.dark-mode .quote-card,
+        body.dark-mode .audio-container,
+        body.dark-mode .article-card, 
+        body.dark-mode .chart-container  {
+            background-color: #1e1e1e; /* Slightly lighter than body for cards */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
+        }
+        body.dark-mode .video-section,
+        body.dark-mode .related-articles {
+            background-color: #1a1a1a; /* Dark background for sections */
+        }
+        body.dark-mode .highlight-box {
+            background-color: rgba(0, 113, 227, 0.1); /* Keep highlight subtle */
+            border-left-color: var(--secondary-color);
+        }
+        body.dark-mode .highlight-box h4 {
+            color: var(--secondary-color);
+        }
+        body.dark-mode .dark-mode-toggle {
+            color: #fff;
+        }
+        body.dark-mode .person-icon {
+            background-color: #2a2a2a;
+            color: var(--secondary-color);
+        }
+        body.dark-mode blockquote {
+            background-color: #1e1e1e;
+            color: #eee;
+            border-left-color: var(--secondary-color);
+        }
+        body.dark-mode blockquote::before {
+            color: rgba(134, 185, 255, 0.1); /* Lighter quote mark */
+        }
+        body.dark-mode .btn { /* CTA button in dark mode */
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+        }
+        body.dark-mode .btn:hover {
+            background-color: transparent;
+            color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+        body.dark-mode .footer-column p,
+        body.dark-mode .footer-links a {
+            color: #bbb;
+        }
+        body.dark-mode .footer-links a:hover {
+            color: #fff;
+        }
+        body.dark-mode .footer-bottom {
+            color: #777;
+            border-top-color: rgba(255, 255, 255, 0.15);
+        }
+        body.dark-mode .chart-bars {
+             border-bottom-color: #444;
+        }
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">AI<span>Journal</span></a>
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Technology</a></li>
+                    <li><a href="#">Media</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+                <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
+                    <span class="moon">🌙</span>
+                    <span class="sun" style="display:none">☀️</span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1 class="fade-in">The Future of AI in UK Journalism: Revolution or Evolution?</h1>
+            <p class="fade-in delay-1">Exploring how artificial intelligence is reshaping the news landscape in Britain, and whether it represents a fundamental transformation or gradual adaptation of journalistic practices.</p>
+            <div class="hero-img fade-in delay-2">
+                <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80" alt="AI and UK Journalism concept image" onerror="this.onerror=null;this.src='https://placehold.co/1600x900/cccccc/333333?text=Hero+Image+Not+Found';">
+                <div class="hero-overlay">
+                    <h2>Journalism's Digital Crossroads</h2>
+                    <p>As AI tools advance, UK newsrooms must balance technological innovation with journalistic integrity and public trust.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="article">
+        <div class="container">
+            <div class="two-column-layout">
+                <div class="article-content">
+                    <div class="article-meta">
+                        <div class="author-avatar">ZH</div>
+                        <span class="author-name">Zihan | AI & Media Researcher</span>
+                        <span class="article-date">May, 2025</span>
+                    </div>
+
+                    <p>In the beginning of 2023, when BuzzFeed announced it has started to use AI for content generation, shares of BuzzFeed jumped 150% overnight. Meanwhile, The Washington Post's Heliograf A.I. has been covering local sports and elections for years. In the UK, The Guardian recently announced a partnership with OpenAI that will make its journalism available to ChatGPT users around the world. And here is the big question for British journalism: Will AI one day replace human journalists?</p>
+                    <p>With AI tools becoming ever more sophisticated, UK newsrooms are having to make difficult decisions around how to incorporate the technology into their reporting processes, without compromising on journalistic integrity or public trust. This research seeks to explore the current level of AI in British journalism, gain expert insights on AI and its potential limitations, and explore public attitudes towards AI-generated news content.</p>
+
+                    <h2 id="current-landscape">The Current Landscape of AI in UK Journalism</h2>
+                    
+                    <blockquote>
+                        <p>We’re seeing integration primarily at the level of tools and workflow optimization. News organizations are experimenting with AI for tasks like data analysis, automating simple reports like financial summaries, transcription, and perhaps content recommendation engines. However, the deep integration into core journalistic decision making or complex narrative writing is still nascent.</p>
+                        <span class="quote-author">— Professor Chen Bei, expert in digital media and computational culture</span>
+                    </blockquote>
+                    
+                    <p>The <a href="https://www.digitalnewsreport.org/" target="_blank" rel="noopener noreferrer">Reuters Digital News Report 2024</a> confirms this assessment, noting that while 72% of news executives globally consider AI important to their organizations, implementation in the UK has been measured and strategic. Only 37% of UK newsrooms currently employ AI tools beyond basic content management systems, compared to 52% in the United States.</p>
+
+                    <div class="content-image clickable-image">
+                        <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Modern Newsroom with technology" data-viewer="AI Integration in UK Newsrooms" onerror="this.onerror=null;this.src='https://placehold.co/1000x600/cccccc/333333?text=Newsroom+Image';">
+                        <div class="image-caption">
+                            <strong>The Evolving Newsroom:</strong> UK news organizations are taking a measured approach to AI implementation, focusing on augmenting rather than replacing journalists.
+                        </div>
+                    </div>
+                    
+                    <p>Notable implementations in British media include:</p>
+                    <ul>
+                        <li>The Guardian’s partnership with OpenAI, focusing on bringing existing human-written journalism to AI platforms rather than replacing journalists</li>
+                        <li>The BBC’s experiments with automated translation and content personalization, maintaining human editorial oversight</li>
+                        <li>The Financial Times’ deployment of AI for data analysis in financial reporting, augmenting specialist journalists rather than replacing them</li>
+                    </ul>
+                    
+                    <p>According to media research, UK newsrooms are taking a particularly cautious approach, mindful of both the BBC’s public service obligations and the high-profile scandals that heightened ethical awareness in British journalism.</p>
+
+                    <div class="chart-section">
+                        <h3>AI Implementation in Global Newsrooms</h3>
+                        <div class="chart-container">
+                            <div class="chart">
+                                <div class="chart-bars">
+                                    <div class="chart-bar" style="height: 180px;"> <div class="chart-bar-value">37%</div>
+                                        <div class="chart-bar-label">UK</div>
+                                    </div>
+                                    <div class="chart-bar" style="height: 260px;"> <div class="chart-bar-value">52%</div>
+                                        <div class="chart-bar-label">US</div>
+                                    </div>
+                                    <div class="chart-bar" style="height: 220px;"> <div class="chart-bar-value">44%</div>
+                                        <div class="chart-bar-label">EU</div>
+                                    </div>
+                                    <div class="chart-bar" style="height: 240px;"> <div class="chart-bar-value">48%</div>
+                                        <div class="chart-bar-label">Asia</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="image-caption" style="text-align:center; margin-top: 30px;">Percentage of newsrooms using advanced AI tools beyond basic content management. Source: Reuters Digital News Report 2024</p>
+                        </div>
+                    </div>
+
+                    <h2 id="expert-perspectives">Expert Perspectives: Will AI Replace Journalists?</h2>
+                    
+                    <div class="image-left">
+                        <div class="content-image clickable-image">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Media Expert discussing AI" data-viewer="Expert Analysis on AI in Journalism" onerror="this.onerror=null;this.src='https://placehold.co/800x500/cccccc/333333?text=Expert+Image';">
+                            <div class="image-caption">
+                                <strong>Expert Analysis:</strong> Academics and industry leaders provide crucial perspectives on AI's role in journalism's future.
+                            </div>
+                        </div>
+                        <div>
+                            <p>When asked directly whether AI could fully replace human journalists, Professor Chen Bei was unequivocal: “Replace entirely? I find that unlikely and perhaps undesirable. Journalism involves cold judgment, ethical reasoning, nuanced interpretation, and source relationship building.”</p>
+                            <p>This assessment aligns with research from <a href="https://www.niemanlab.org/tag/artificial-intelligence/" target="_blank" rel="noopener noreferrer">Nieman Lab</a>, which has documented the limitations of AI in core journalistic functions. Their 2023 study of AI-generated news found that while language models could produce grammatically correct content, they struggled with fact-checking, source verification, and identifying newsworthy angles – all essential journalistic skills.</p>
+                        </div>
+                    </div>
+                    
+                    <p>The <a href="https://guides.lib.unc.edu/generativeAI/ai-journalism" target="_blank" rel="noopener noreferrer">University of North Carolina’s Generative AI and Journalism Guide</a> similarly notes that “AI excels at pattern recognition and synthesis of existing information but lacks the intuition, emotional intelligence, and ethical reasoning that define quality journalism.”</p>
+                    <p>British media scholars have been particularly focused on how AI might reshape rather than replace journalistic roles. Research from City, University of London argues that “the future is augmented journalism – where AI handles routine tasks while human journalists focus on investigation, interpretation, and building trust with audiences.”</p>
+
+                    <h2 id="public-perception">Public Perception: Do UK Audiences Trust AI News?</h2>
+                    
+                    <p>To investigate public sentiment, we conducted street interviews across London using a blind test format. Participants were shown two news excerpts—one AI-generated, one written by a human journalist—without revealing which was which.</p>
+                    
+                    <div class="content-image clickable-image">
+                        <img src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80" alt="People being interviewed on a street" data-viewer="Street Interviews in London on AI News" onerror="this.onerror=null;this.src='https://placehold.co/1600x900/cccccc/333333?text=Public+Opinion+Image';">
+                        <div class="image-caption">
+                            <strong>Public Opinion Survey:</strong> Street interviews conducted in London revealed varied attitudes toward AI-generated news across different age groups.
+                        </div>
+                    </div>
+                    
+                    <div class="quote-card">
+                        <div class="quote-card-header">
+                            <div class="person-icon">👩</div>
+                            <div>
+                                <div class="person-name">Penny</div>
+                                <div class="person-description">Writer, 30s</div>
+                            </div>
+                        </div>
+                        <div class="quote-card-content">
+                            <p>I have no objections... the sources should still be being human. So I would assume that, why not? I obviously don't know enough about AI and for the moral protocol is around that. But definitely I would like to say that a human should always be [involved].</p>
+                        </div>
+                    </div>
+                    
+                    <p>Most respondents struggled to distinguish between the two texts. James, a university student, noted: “They’re similar... Excerpt A feels a little more descriptive. B is very straight to the point. For basic facts, I’d rely on it.”</p>
+                    
+                    <div class="quote-card">
+                        <div class="quote-card-header">
+                            <div class="person-icon">👩‍🎓</div>
+                            <div>
+                                <div class="person-name">Sarah</div>
+                                <div class="person-description">Media Student</div>
+                            </div>
+                        </div>
+                        <div class="quote-card-content">
+                            <p>Wow, it did a decent job on the facts. But B has the human element. I think AI can be a powerful tool for journalists—data analysis, drafting simple reports—but it shouldn’t replace them entirely. We need human judgment for ethics, context, and deeper storytelling.</p>
+                        </div>
+                    </div>
+                    
+                    <p>Other respondents were more skeptical. Rob, a management consultant, described AI-generated news as “extremely dangerous” because “we don’t know how the algorithms are created. So it’s completely untransparent and it’s very dangerous.”</p>
+                    <p>Age appeared to influence trust levels significantly. Michael, a young professional, offered a pragmatic view: “AI is useful in my field for speeding things up, but I still want human oversight in news. Accuracy is crucial, and so are ethical considerations.”</p>
+                    
+                    <div class="image-right">
+                        <div>
+                            <p>Older interviewees expressed greater skepticism. Margaret, a retiree holding a print newspaper, was emphatic: “Machines can’t replace real journalists! Where’s the experience? The understanding of the community? It’s just processing words.”</p>
+                            <p>By contrast, some younger respondents showed surprising openness. Sixteen-year-old Alex shrugged and said: “If the news looks real, I don’t really care who wrote it… Trust AI news? Yeah, why not?”</p>
+                            <p>When asked whether AI would eventually replace human journalists, interviewees consistently expressed preference for human oversight. As Penny elaborated: “I obviously don’t know enough about AI and for the moral protocol is around that. But definitely I would like to say that a human should always be [involved].”</p>
+                        </div>
+                        <div class="content-image clickable-image">
+                            <img src="https://images.unsplash.com/photo-1542513217-0b0eedf7005d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Older person reading a newspaper" data-viewer="Age Differences in AI Trust" onerror="this.onerror=null;this.src='https://placehold.co/800x500/cccccc/333333?text=News+Consumer+Image';">
+                            <div class="image-caption">
+                                <strong>Generation Gap:</strong> Research shows that older news consumers (55+) are significantly more skeptical of AI journalism than younger audiences.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p>These street-level perspectives mirror findings from larger surveys. According to the Reuters Institute, 62% of UK news consumers express concern about AI-generated content, with transparency and accuracy being primary concerns. Notably, older audiences (55+) show significantly higher skepticism (78%) toward AI journalism than younger consumers (18-24) at 48%.</p>
+
+                    <h2 id="challenges">Challenges and Ethical Considerations</h2>
+                    
+                    <p>The integration of AI into UK journalism presents several significant challenges, according to both expert interviews and secondary research.</p>
+                    <p>Professor Chen Bei highlighted the difficulty of maintaining journalistic values: “Journalism involves cold judgment, ethical reasoning, nuanced interpretation, and source relationship building.” These qualities remain difficult for AI systems to replicate convincingly.</p>
+                    
+                    <div class="image-full">
+                        <img src="https://images.unsplash.com/photo-1501436513145-30f24e19fcc8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80" alt="Abstract image representing ethical AI in journalism" data-viewer="Ethical Challenges in AI Journalism" onerror="this.onerror=null;this.src='https://placehold.co/1600x900/cccccc/333333?text=Ethical+Challenges+Image';">
+                        <div class="image-caption">
+                            <strong>Ethical Challenges:</strong> UK news organizations must navigate concerns about transparency, accuracy, and maintaining public trust when implementing AI systems.
+                        </div>
+                    </div>
+                    
+                    <p>The University of North Carolina’s guide identifies four major challenges:</p>
+                    <div class="highlight-box">
+                        <h4>Four Key Challenges for AI in Journalism</h4>
+                        <ol>
+                            <li><strong>Accuracy and “hallucinations”:</strong> AI systems occasionally generate plausible-sounding but entirely fabricated information. In a test conducted by City University London in 2023, GPT-4 “hallucinated” quotes and statistics in 18% of news articles it generated about UK politics.</li>
+                            <li><strong>Transparency concerns:</strong> 86% of UK news consumers surveyed by the Reuters Institute believe they should be informed when content is AI-generated, yet only 23% could consistently identify such content.</li>
+                            <li><strong>Legal and copyright issues:</strong> Questions remain about who owns AI-generated content and whether training AI on copyrighted news content constitutes fair use. The UK’s post-Brexit copyright framework is still evolving on these issues.</li>
+                            <li><strong>Employment impact:</strong> While complete replacement seems unlikely, AI could significantly impact journalism employment. Journalism unions estimate that certain roles, particularly in data journalism and routine reporting, could see workforce reductions by 2030 due to AI automation.</li>
+                        </ol>
+                    </div>
+
+                    <h2 id="changing-landscape">The Changing Landscape: How UK Newsrooms Are Adapting</h2>
+                    
+                    <p>Despite these challenges, UK news organizations are finding ways to integrate AI effectively. The Financial Times’ approach exemplifies the emerging “human-AI partnership” model. Their data tools use machine learning to analyze thousands of financial documents daily, flagging anomalies and trends for human journalists to investigate.</p>
+                    
+                    <div class="feature-card">
+                        <div class="feature-content">
+                            <h3>Case Study: The Financial Times' AI Strategy</h3>
+                            <p>The Financial Times has implemented AI tools that scan thousands of corporate filings and financial reports daily, identifying unusual patterns and potential story leads. These tools have enabled their journalists to uncover stories that might otherwise have been missed.</p>
+                            <p>Crucially, the FT maintains strict human oversight, with experienced financial journalists evaluating AI-flagged anomalies, conducting further investigation, and making final editorial decisions. This partnership approach has enhanced reporting depth while maintaining the publication's reputation for accuracy.</p>
+                        </div>
+                        <div class="feature-image">
+                            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Financial Times Building" onerror="this.onerror=null;this.src='https://placehold.co/800x500/cccccc/333333?text=FT+Building+Image';">
+                        </div>
+                    </div>
+                    
+                    <p>The BBC’s approach has similarly emphasized augmentation over replacement. Their AI experimentation lab focuses on content discovery, translation, and accessibility features while maintaining human editorial judgment for all published content.</p>
+                    <p>Smaller UK news organizations are finding that AI can help them compete with larger outlets. Community-owned local news cooperatives use AI tools for transcription and data analysis, allowing their small teams to tackle investigative stories that would previously have been beyond their resources.</p>
+
+                    <h2 id="future">The Future: Evolution, Not Revolution</h2>
+                    
+                    <div class="image-left">
+                        <div class="content-image clickable-image">
+                            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Collaborative future newsroom with AI" data-viewer="Future of Journalism with AI" onerror="this.onerror=null;this.src='https://placehold.co/800x500/cccccc/333333?text=Future+Newsroom+Image';">
+                            <div class="image-caption">
+                                <strong>Future of Journalism:</strong> Industry projections suggest a hybrid model where AI handles routine content while humans focus on investigation and interpretation.
+                            </div>
+                        </div>
+                        <div>
+                            <p>Industry estimates suggest that by 2030 AI will produce around 30 percent of all news content in the UK, mostly in areas such as sports results, financial news and weather reports, as well as stories with large datasets. But human journalists will continue to have importance in investigative journalism, feature writing, and in editorial judgment.</p>
+                            <p>Lisa Gibbs, the AI director at the Associated Press, has a view that many UK editors echo: "The future of AI in journalism is not that AI will replace journalists. It's journalists who use AI replacing journalists who don't."</p>
+                        </div>
+                    </div>
+                    
+                    <p>This transition requires a different set of skills for journalists. Universities are taking note. AI literacy has become part of journalism curricula at Goldsmiths, University of London's journalism department, and at City University's journalism syllabus, where there are now modules on computational journalism.</p>
+                    <p>Meanwhile, industry training programs are changing. The National Council for the Training of Journalists (NCTJ) added AI literacy as a requirement of its diploma in 2019, alongside the more traditional skills of media law and shorthand.</p>
+
+                    <h2 id="conclusion">Conclusion: Transformation, Not Replacement</h2>
+                    
+                    <p>Will AI replace journalists in the UK news industry? The evidence from both expert interviews and public perception suggests not. Rather than replacement, we are witnessing transformation – AI is changing how journalism works but not eliminating the need for human journalists.</p>
+                    <p>As Professor Chen Bei noted, journalism fundamentally involves judgment, ethics, and human understanding – qualities that AI has yet to convincingly replicate. The public, while sometimes unable to distinguish between AI and human writing, continues to value human oversight and judgment, particularly for complex or sensitive topics.</p>
+                    <p>The street interviews conducted revealed an audience that values efficiency but not at the expense of trust. As one interviewee succinctly put it, the tension is between “efficiency versus ethics, speed versus trust.”</p>
+                    
+                    <blockquote>
+                        <p>In the words of our video interviewee, “The story of AI in journalism is still being written. What character comes next?” The answer, it seems, is not AI replacing humans, but humans and AI writing the future of journalism together.</p>
+                    </blockquote>
+                    
+                    <p>For UK journalism to thrive in this new landscape, the industry must embrace AI as a tool while doubling down on the uniquely human elements of the craft: investigation, interpretation, and storytelling that resonates on a human level. The future belongs not to those who resist AI, nor to those who surrender to it, but to those who learn to work alongside it effectively while maintaining the standards and ethics that define quality journalism.</p>
+                </div>
+                
+                <aside class="sidebar">
+                    <div class="toc-container">
+                        <div class="toc-title">In this Article</div>
+                        <ul class="toc-list">
+                            <li class="toc-item"><a href="#current-landscape" class="toc-link">Current Landscape</a></li>
+                            <li class="toc-item"><a href="#expert-perspectives" class="toc-link">Expert Perspectives</a></li>
+                            <li class="toc-item"><a href="#public-perception" class="toc-link">Public Perception</a></li>
+                            <li class="toc-item"><a href="#challenges" class="toc-link">Challenges & Ethics</a></li>
+                            <li class="toc-item"><a href="#changing-landscape" class="toc-link">Adapting Newsrooms</a></li>
+                            <li class="toc-item"><a href="#future" class="toc-link">The Future Outlook</a></li>
+                            <li class="toc-item"><a href="#conclusion" class="toc-link">Conclusion</a></li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <section class="video-section">
+        <div class="container">
+            <h2>Video: Public Perspectives on AI in Journalism</h2>
+            <p>Watch our street interviews with Londoners as they reflect on the role of AI in news media and whether they can distinguish between AI and human-written content.</p>
+            <div class="video-container">
+                <video controls poster="https://placehold.co/1000x563/0071e3/ffffff?text=Video+Preview" preload="metadata">
+                    <source src="https://youtu.be/YNq9lfC3_dc" type="video/mp4">
+                    Your browser does not support the video tag. Please <a href="https://youtu.be/YNq9lfC3_dc">download the video</a> to watch.
+                </video>
+            </div>
+            <div class="video-description">
+                In this video, we conducted street interviews across London, asking participants about their trust in AI-generated news and their ability to distinguish between AI and human-written content. The responses reveal interesting generational differences and raise important questions about transparency in news media.
+            </div>
+        </div>
+    </section>
+
+    <section class="audio-section">
+        <div class="container">
+            <div class="audio-container">
+                <h3 class="audio-title">Extended Interview: Professor Chen Bei on AI's Impact</h3>
+                <audio controls class="audio-player" preload="metadata">
+                    <source src="https://raw.githubusercontent.com/GeBabyGeeGee/Zihan/main/5%E6%9C%887%E6%97%A5(1).MP3" type="audio/mpeg">
+                    Your browser does not support the audio element. Please <a href="https://raw.githubusercontent.com/GeBabyGeeGee/Zihan/main/5%E6%9C%887%E6%97%A5(1).MP3">download the audio</a> to listen.
+                </audio>
+                <div class="audio-portrait">
+                    <img src="https://images.unsplash.com/photo-1573497620053-ea5300f94f21?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=120&h=120&q=80" alt="Portrait of Professor Chen Bei" onerror="this.onerror=null;this.src='https://placehold.co/120x120/cccccc/333333?text=Prof.+Chen';">
+                    <div class="audio-person-details">
+                        <h4>Professor Chen Bei</h4>
+                        <p>Digital Media & Computational Culture Expert</p>
+                        <p>Professor Chen has studied the intersection of AI and journalism for over a decade and advises several major news organizations on their digital transformation strategies.</p>
+                    </div>
+                </div>
+                <div class="audio-description">
+                    Listen to our full interview with Professor Chen Bei as she discusses the future of AI in journalism, the ethical considerations for newsrooms, and how journalistic education must evolve in response to these technological changes.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="related-articles">
+        <div class="container">
+            <h2 class="related-title">Explore Related Topics</h2>
+            <div class="article-grid">
+                <div class="article-card">
+                    <div class="article-card-image">
+                        <img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=600&q=80" alt="Abstract image representing AI Ethics" onerror="this.onerror=null;this.src='https://placehold.co/800x600/cccccc/333333?text=AI+Ethics';">
+                    </div>
+                    <div class="article-card-content">
+                        <h3 class="article-card-title">The Ethics of AI in Media</h3>
+                        <p class="article-card-excerpt">Exploring the moral dimensions of implementing AI in news production and distribution.</p>
+                        <a href="#" class="article-card-link">Read more</a>
+                    </div>
+                </div>
+                <div class="article-card">
+                    <div class="article-card-image">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=600&q=80" alt="Data charts and graphs for journalism" onerror="this.onerror=null;this.src='https://placehold.co/800x600/cccccc/333333?text=Data+Journalism';">
+                    </div>
+                    <div class="article-card-content">
+                        <h3 class="article-card-title">Data-Driven Journalism</h3>
+                        <p class="article-card-excerpt">How big data and AI are empowering investigative reporting in the digital age.</p>
+                        <a href="#" class="article-card-link">Read more</a>
+                    </div>
+                </div>
+                <div class="article-card">
+                    <div class="article-card-image">
+                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=600&q=80" alt="Students in a classroom learning about media" onerror="this.onerror=null;this.src='https://placehold.co/800x600/cccccc/333333?text=Journalism+Education';">
+                    </div>
+                    <div class="article-card-content">
+                        <h3 class="article-card-title">Journalism Education</h3>
+                        <p class="article-card-excerpt">How journalism schools are adapting their curricula to prepare students for an AI-augmented media landscape.</p>
+                        <a href="#" class="article-card-link">Read more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Stay Informed on AI & Journalism</h2>
+            <p>Join our newsletter to receive the latest insights, analyses, and updates on how artificial intelligence continues to reshape the media landscape in the UK and globally.</p>
+            <a href="#" class="btn">Subscribe Now</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>AI<span>Journal</span></h4>
+                    <p>Exploring the intersection of technology and journalism in the digital age.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Explore</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">AI & Technology</a></li>
+                        <li><a href="#">Data Journalism</a></li>
+                        <li><a href="#">Media Ethics</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Research Papers</a></li>
+                        <li><a href="#">Case Studies</a></li>
+                        <li><a href="#">Webinars</a></li>
+                        <li><a href="#">Tools & Software</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Team</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AIJournal. All rights reserved. Exploring the future of journalism in a digital world.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="image-viewer" id="imageViewer">
+        <button class="viewer-close" id="viewerClose" aria-label="Close image viewer">&times;</button>
+        <div class="viewer-content">
+            <img src="" alt="Full-size view of image" class="viewer-image" id="viewerImage">
+            <div class="viewer-caption" id="viewerCaption"></div>
+        </div>
+    </div>
+
+    <script>
+        // Dark Mode Toggle Functionality
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const moonIcon = darkModeToggle.querySelector('.moon');
+        const sunIcon = darkModeToggle.querySelector('.sun');
+        
+        function setDarkMode(isDark) {
+            if (isDark) {
+                document.body.classList.add('dark-mode');
+                moonIcon.style.display = 'none';
+                sunIcon.style.display = 'inline';
+                localStorage.setItem('darkMode', 'true');
+            } else {
+                document.body.classList.remove('dark-mode');
+                moonIcon.style.display = 'inline';
+                sunIcon.style.display = 'none';
+                localStorage.setItem('darkMode', 'false');
+            }
+        }
+
+        // Check local storage for dark mode preference
+        if (localStorage.getItem('darkMode') === 'true') {
+            setDarkMode(true);
+        } else {
+            // Optional: Check for system preference if no local storage setting
+            // const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            // if (prefersDark && localStorage.getItem('darkMode') === null) {
+            //    setDarkMode(true);
+            // } else {
+                 setDarkMode(false); // Default to light if no preference
+            // }
+        }
+        
+        darkModeToggle.addEventListener('click', () => {
+            setDarkMode(!document.body.classList.contains('dark-mode'));
+        });
+
+        // Image Viewer Functionality
+        const imageViewer = document.getElementById('imageViewer');
+        const viewerImage = document.getElementById('viewerImage');
+        const viewerCaption = document.getElementById('viewerCaption');
+        const viewerClose = document.getElementById('viewerClose');
+        const clickableImages = document.querySelectorAll('.clickable-image img');
+
+        clickableImages.forEach(img => {
+            img.addEventListener('click', function() {
+                imageViewer.classList.add('active');
+                viewerImage.src = this.src;
+                viewerImage.alt = this.alt; // Set alt text for viewer image
+                viewerCaption.textContent = this.dataset.viewer || this.alt || ''; // Use data-viewer or alt
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            });
+        });
+
+        function closeImageViewer() {
+            imageViewer.classList.remove('active');
+            document.body.style.overflow = ''; // Restore scrolling
+        }
+
+        viewerClose.addEventListener('click', closeImageViewer);
+        imageViewer.addEventListener('click', function(e) {
+            if (e.target === imageViewer) { // Click on background
+                closeImageViewer();
+            }
+        });
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && imageViewer.classList.contains('active')) {
+                closeImageViewer();
+            }
+        });
+
+        // Chart Bar Animation (simple version, triggers on load)
+        document.addEventListener('DOMContentLoaded', function() {
+            const chartBars = document.querySelectorAll('.chart-bar');
+            chartBars.forEach(bar => {
+                const targetHeight = bar.style.height; // Get target height set inline
+                bar.style.height = '0px'; // Start from 0
+                // Animate to target height
+                setTimeout(() => {
+                    bar.style.transition = 'height 1s ease-out'; // Ensure transition is set
+                    bar.style.height = targetHeight;
+                }, 500); // Delay to ensure page is rendered
+            });
+        });
+
+        // Table of Contents Active Link Highlighting
+        const tocLinks = document.querySelectorAll('.toc-link');
+        const sections = Array.from(document.querySelectorAll('.article-content h2[id]')); // Get sections with IDs from article content
+
+        const activateTocLink = () => {
+            let currentSectionId = '';
+            // Find the section that is currently most visible in the viewport
+            // This logic gives priority to sections higher up if multiple are in view.
+            for (let section of sections) {
+                const sectionTop = section.getBoundingClientRect().top;
+                if (sectionTop < window.innerHeight * 0.5) { // Consider active if top half is visible or passed
+                    currentSectionId = section.id;
+                } else {
+                    break; // Stop if sections are below the halfway mark
+                }
+            }
+            
+            // If no section is "current" (e.g., scrolled to top), try to find the first one.
+            if (!currentSectionId && sections.length > 0) {
+                 const firstSectionTop = sections[0].getBoundingClientRect().top;
+                 if (firstSectionTop >=0 && firstSectionTop < window.innerHeight) {
+                    // currentSectionId = sections[0].id; // Optionally activate first if at top
+                 }
+            }
+
+
+            tocLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${currentSectionId}`) {
+                    link.classList.add('active');
+                }
+            });
+        };
+        
+        // Debounce scroll event for performance
+        let scrollTimeout;
+        window.addEventListener('scroll', () => {
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(activateTocLink, 100);
+        });
+        activateTocLink(); // Initial call
+
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                // Ensure it's an actual on-page anchor and not just "#"
+                if (href.length > 1 && href.startsWith('#')) {
+                    const targetElement = document.querySelector(href);
+                    if (targetElement) {
+                        e.preventDefault();
+                        const headerOffset = document.querySelector('header') ? document.querySelector('header').offsetHeight : 80;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Intersection Observer for Fade-in Animations on Scroll
+        const animatedElements = document.querySelectorAll('.fade-in, .content-image, .feature-card, .data-item, .article-card, .column-item, .chart-container, .quote-card, .video-container, .audio-container');
+        const observerOptions = {
+            root: null, // relative to document viewport
+            rootMargin: '0px',
+            threshold: 0.1 // 10% of the item is visible
+        };
+
+        const observerCallback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running'; // Resume or start animation
+                     if (!entry.target.classList.contains('fade-in')) { // For elements not using .fade-in class directly
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                        // Add a class to mark as animated if needed, or use a generic animation
+                        entry.target.classList.add('revealed'); // Example class
+                    }
+                    observer.unobserve(entry.target); // Stop observing once animated
+                }
+            });
+        };
+        const animationObserver = new IntersectionObserver(observerCallback, observerOptions);
+        animatedElements.forEach(el => {
+            // Initialize styles for non-.fade-in elements if they should also animate
+            if (!el.classList.contains('fade-in')) {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.7s ease-out, transform 0.7s ease-out';
+            }
+            animationObserver.observe(el);
+        });
+
+    </script>
+</body>
+</html>
+```
+
+I've incorporated your new text into the main article body, updated the video and audio `src` attributes (using the raw GitHub link for the audio), and made sure the overall structure and JavaScript functionalities should remain operational. I also adjusted the "Expert Perspectives" section by removing the three-column layout as it wasn't in your new text for that part, and refined how quotes are displayed in the "Public Perception" section.
+
+You can now preview this updated HTML. Let me know if you have any more adjustmen
