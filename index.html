@@ -78,6 +78,7 @@
             height: auto;
             border-radius: 12px;
             transition: transform 0.3s ease;
+            vertical-align: middle; /* Prevents small space below image */
         }
 
         ul, ol {
@@ -493,7 +494,7 @@
         /* Audio player */
         .audio-section {
             padding: 4rem 0;
-            background-color: white;
+            background-color: white; /* Or var(--light-color) if preferred */
         }
 
         .audio-container {
@@ -1219,6 +1220,9 @@
         body.dark-mode .related-articles {
             background-color: #1a1a1a; /* Dark background for sections */
         }
+         body.dark-mode .audio-section { /* Ensure audio section background matches */
+             background-color: #121212;
+         }
         body.dark-mode .highlight-box {
             background-color: rgba(0, 113, 227, 0.1); /* Keep highlight subtle */
             border-left-color: var(--secondary-color);
@@ -1297,6 +1301,29 @@
                 <div class="hero-overlay">
                     <h2>Journalism's Digital Crossroads</h2>
                     <p>As AI tools advance, UK newsrooms must balance technological innovation with journalistic integrity and public trust.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="audio-section">
+        <div class="container">
+            <div class="audio-container">
+                <h3 class="audio-title">Extended Interview: Professor Chen Bei on AI's Impact</h3>
+                <audio controls class="audio-player" preload="metadata">
+                    <source src="https://raw.githubusercontent.com/GeBabyGeeGee/Zihan/main/5%E6%9C%887%E6%97%A5(1).MP3" type="audio/mpeg">
+                    Your browser does not support the audio element. Please <a href="https://raw.githubusercontent.com/GeBabyGeeGee/Zihan/main/5%E6%9C%887%E6%97%A5(1).MP3">download the audio</a> to listen.
+                </audio>
+                <div class="audio-portrait">
+                    <img src="https://raw.githubusercontent.com/GeBabyGeeGee/ZihanWbesite/main/chenbei.png" alt="Portrait of Professor Chen Bei" onerror="this.onerror=null;this.src='https://placehold.co/120x120/cccccc/333333?text=Prof.+Chen';">
+                    <div class="audio-person-details">
+                        <h4>Professor Chen Bei</h4>
+                        <p>Digital Media & Computational Culture Expert</p>
+                        <p>Professor Chen has studied the intersection of AI and journalism for over a decade and advises several major news organizations on their digital transformation strategies.</p>
+                    </div>
+                </div>
+                <div class="audio-description">
+                    Listen to our full interview with Professor Chen Bei as she discusses the future of AI in journalism, the ethical considerations for newsrooms, and how journalistic education must evolve in response to these technological changes.
                 </div>
             </div>
         </div>
@@ -1538,29 +1565,6 @@
             </div>
             <div class="video-description">
                 In this video, we conducted street interviews across London, asking participants about their trust in AI-generated news and their ability to distinguish between AI and human-written content. The responses reveal interesting generational differences and raise important questions about transparency in news media.
-            </div>
-        </div>
-    </section>
-
-    <section class="audio-section">
-        <div class="container">
-            <div class="audio-container">
-                <h3 class="audio-title">Extended Interview: Professor Chen Bei on AI's Impact</h3>
-                <audio controls class="audio-player" preload="metadata">
-                    <source src="https://raw.githubusercontent.com/GeBabyGeeGee/Zihan/main/5%E6%9C%887%E6%97%A5(1).MP3" type="audio/mpeg">
-                    Your browser does not support the audio element. Please <a href="https://raw.githubusercontent.com/GeBabyGeeGee/Zihan/main/5%E6%9C%887%E6%97%A5(1).MP3">download the audio</a> to listen.
-                </audio>
-                <div class="audio-portrait">
-                    <img src="https://images.unsplash.com/photo-1573497620053-ea5300f94f21?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=120&h=120&q=80" alt="Portrait of Professor Chen Bei" onerror="this.onerror=null;this.src='https://placehold.co/120x120/cccccc/333333?text=Prof.+Chen';">
-                    <div class="audio-person-details">
-                        <h4>Professor Chen Bei</h4>
-                        <p>Digital Media & Computational Culture Expert</p>
-                        <p>Professor Chen has studied the intersection of AI and journalism for over a decade and advises several major news organizations on their digital transformation strategies.</p>
-                    </div>
-                </div>
-                <div class="audio-description">
-                    Listen to our full interview with Professor Chen Bei as she discusses the future of AI in journalism, the ethical considerations for newsrooms, and how journalistic education must evolve in response to these technological changes.
-                </div>
             </div>
         </div>
     </section>
