@@ -196,12 +196,13 @@
 
         .hero-img img {
             width: 100%;
-            transform: scale(1.01);
+            /* Removed transform scale for potentially non-photographic images */
             transition: transform 0.7s ease;
         }
 
         .hero-img:hover img {
-            transform: scale(1.03);
+             /* Optional: Add subtle hover effect if desired */
+            /* transform: scale(1.03); */
         }
 
         .hero-overlay {
@@ -1102,6 +1103,17 @@
                 grid-template-columns: 1fr; /* Stack grid items */
                 gap: 1.5rem; /* Adjust gap */
             }
+             /* Ensure image-left content stacks properly */
+            .image-left {
+                grid-template-columns: 1fr; /* Stack image and text */
+            }
+             .image-left .content-image {
+                 order: 1; /* Optional: Keep image first */
+             }
+             .image-left div:not(.content-image) { /* Target the text container */
+                 order: 2; /* Optional: Keep text second */
+             }
+
             .feature-card { padding: 1.5rem; }
             .image-full { margin: 2rem -1rem; }
             
@@ -1297,7 +1309,7 @@
             <h1 class="fade-in">The Future of AI in UK Journalism: Revolution or Evolution?</h1>
             <p class="fade-in delay-1">Exploring how artificial intelligence is reshaping the news landscape in Britain, and whether it represents a fundamental transformation or gradual adaptation of journalistic practices.</p>
             <div class="hero-img fade-in delay-2">
-                <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80" alt="AI and UK Journalism concept image" onerror="this.onerror=null;this.src='https://placehold.co/1600x900/cccccc/333333?text=Hero+Image+Not+Found';">
+                <img src="https://raw.githubusercontent.com/GeBabyGeeGee/ZihanWbesite/main/AINEWS.png" alt="AI news concept image" onerror="this.onerror=null;this.src='https://placehold.co/1000x600/cccccc/333333?text=Hero+Image+Not+Found';">
                 <div class="hero-overlay">
                     <h2>Journalism's Digital Crossroads</h2>
                     <p>As AI tools advance, UK newsrooms must balance technological innovation with journalistic integrity and public trust.</p>
@@ -1352,7 +1364,7 @@
                     <p>The <a href="https://www.digitalnewsreport.org/" target="_blank" rel="noopener noreferrer">Reuters Digital News Report 2024</a> confirms this assessment, noting that while 72% of news executives globally consider AI important to their organizations, implementation in the UK has been measured and strategic. Only 37% of UK newsrooms currently employ AI tools beyond basic content management systems, compared to 52% in the United States.</p>
 
                     <div class="content-image clickable-image">
-                        <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Modern Newsroom with technology" data-viewer="AI Integration in UK Newsrooms" onerror="this.onerror=null;this.src='https://placehold.co/1000x600/cccccc/333333?text=Newsroom+Image';">
+                        <img src="https://raw.githubusercontent.com/GeBabyGeeGee/ZihanWbesite/main/AINEWS.png" alt="AI news concept image showing evolving newsroom" data-viewer="AI Integration in UK Newsrooms" onerror="this.onerror=null;this.src='https://placehold.co/1000x600/cccccc/333333?text=Newsroom+Image';">
                         <div class="image-caption">
                             <strong>The Evolving Newsroom:</strong> UK news organizations are taking a measured approach to AI implementation, focusing on augmenting rather than replacing journalists.
                         </div>
@@ -1394,9 +1406,9 @@
                     
                     <div class="image-left">
                         <div class="content-image clickable-image">
-                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Media Expert discussing AI" data-viewer="Expert Analysis on AI in Journalism" onerror="this.onerror=null;this.src='https://placehold.co/800x500/cccccc/333333?text=Expert+Image';">
+                            <img src="https://raw.githubusercontent.com/GeBabyGeeGee/ZihanWbesite/main/chenbei.png" alt="Portrait of Professor Chen Bei" data-viewer="Professor Chen Bei" onerror="this.onerror=null;this.src='https://placehold.co/800x500/cccccc/333333?text=Expert+Image';">
                             <div class="image-caption">
-                                <strong>Expert Analysis:</strong> Academics and industry leaders provide crucial perspectives on AI's role in journalism's future.
+                                <strong>Expert Analysis:</strong> Professor Chen Bei provides crucial perspectives on AI's role in journalism's future.
                             </div>
                         </div>
                         <div>
@@ -1413,7 +1425,7 @@
                     <p>To investigate public sentiment, we conducted street interviews across London using a blind test format. Participants were shown two news excerpts—one AI-generated, one written by a human journalist—without revealing which was which.</p>
                     
                     <div class="content-image clickable-image">
-                        <img src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80" alt="People being interviewed on a street" data-viewer="Street Interviews in London on AI News" onerror="this.onerror=null;this.src='https://placehold.co/1600x900/cccccc/333333?text=Public+Opinion+Image';">
+                        <img src="https://raw.githubusercontent.com/GeBabyGeeGee/ZihanWbesite/main/Manypeople.png" alt="Diverse group of people representing public opinion" data-viewer="Street Interviews in London on AI News" onerror="this.onerror=null;this.src='https://placehold.co/1600x900/cccccc/333333?text=Public+Opinion+Image';">
                         <div class="image-caption">
                             <strong>Public Opinion Survey:</strong> Street interviews conducted in London revealed varied attitudes toward AI-generated news across different age groups.
                         </div>
@@ -1457,7 +1469,7 @@
                             <p>When asked whether AI would eventually replace human journalists, interviewees consistently expressed preference for human oversight. As Penny elaborated: “I obviously don’t know enough about AI and for the moral protocol is around that. But definitely I would like to say that a human should always be [involved].”</p>
                         </div>
                         <div class="content-image clickable-image">
-                            <img src="https://images.unsplash.com/photo-1542513217-0b0eedf7005d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Older person reading a newspaper" data-viewer="Age Differences in AI Trust" onerror="this.onerror=null;this.src='https://placehold.co/800x500/cccccc/333333?text=News+Consumer+Image';">
+                            <img src="https://raw.githubusercontent.com/GeBabyGeeGee/ZihanWbesite/main/generationgap.png" alt="Image depicting different generations interacting with technology" data-viewer="Age Differences in AI Trust" onerror="this.onerror=null;this.src='https://placehold.co/800x500/cccccc/333333?text=News+Consumer+Image';">
                             <div class="image-caption">
                                 <strong>Generation Gap:</strong> Research shows that older news consumers (55+) are significantly more skeptical of AI journalism than younger audiences.
                             </div>
@@ -1511,7 +1523,7 @@
                     
                     <div class="image-left">
                         <div class="content-image clickable-image">
-                            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Collaborative future newsroom with AI" data-viewer="Future of Journalism with AI" onerror="this.onerror=null;this.src='https://placehold.co/800x500/cccccc/333333?text=Future+Newsroom+Image';">
+                             <img src="https://raw.githubusercontent.com/GeBabyGeeGee/ZihanWbesite/main/FutureNews.png" alt="Futuristic news interface with human collaboration" data-viewer="Future of Journalism with AI" onerror="this.onerror=null;this.src='https://placehold.co/800x500/cccccc/333333?text=Future+Newsroom+Image';">
                             <div class="image-caption">
                                 <strong>Future of Journalism:</strong> Industry projections suggest a hybrid model where AI handles routine content while humans focus on investigation and interpretation.
                             </div>
